@@ -2,6 +2,7 @@ package com.modcom.radio_time_date_ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,6 +13,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //radio Buttons, date and time picker
+        //our spinner is not populated with counties
+        val counties = arrayOf("Nairobi","Nakuru","Mombasa","Narok","Meru","Kajiado")
+        val arrayAdapter: ArrayAdapter<*>
+
+        //create the adapter and pass the counties
+        arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, counties)
+
+        //put the adapter to the spinner
+        spincounty.adapter = arrayAdapter
+
+
+
         buttonbooking.setOnClickListener{
             //which radio button was selected
             val radio: RadioButton = findViewById(radiogroup.checkedRadioButtonId)
