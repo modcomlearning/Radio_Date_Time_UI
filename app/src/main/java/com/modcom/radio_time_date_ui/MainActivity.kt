@@ -15,9 +15,12 @@ class MainActivity : AppCompatActivity() {
         buttonbooking.setOnClickListener{
             //which radio button was selected
             val radio: RadioButton = findViewById(radiogroup.checkedRadioButtonId)
-            Toast.makeText(applicationContext, "You selected  ${radio.text}", Toast.LENGTH_LONG).show()
+
+            //how to capture the names
+            val names = edit_names.text.toString()
 
 
+            Toast.makeText(applicationContext, "You selected  ${radio.text}  Your Names $names", Toast.LENGTH_LONG).show()
 
         }
 
