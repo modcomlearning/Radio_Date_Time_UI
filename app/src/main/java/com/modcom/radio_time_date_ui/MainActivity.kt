@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //radio Buttons, date and time picker
-
         buttonbooking.setOnClickListener{
             //which radio button was selected
             val radio: RadioButton = findViewById(radiogroup.checkedRadioButtonId)
@@ -32,13 +31,13 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            //time picker
-            time.setOnTimeChangedListener{view, hour, minute->
+            //time picker  24hours
+            time.setOnTimeChangedListener{view, hour, minute ->
                 Toast.makeText(applicationContext, "You selected  Time $hour : $minute", Toast.LENGTH_LONG).show()
             }
 
 
-            
+
             Toast.makeText(applicationContext, "You selected  ${radio.text}  Your Names $names", Toast.LENGTH_LONG).show()
 
         }//ends button listener
