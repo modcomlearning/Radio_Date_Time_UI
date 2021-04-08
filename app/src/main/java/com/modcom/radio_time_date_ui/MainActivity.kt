@@ -24,9 +24,12 @@ class MainActivity : AppCompatActivity() {
         spincounty.adapter = arrayAdapter
 
 
-
         buttonbooking.setOnClickListener{
             //which radio button was selected
+            //capture the selected county from the spinner
+            val county = spincounty.selectedItem.toString() //************
+
+
             val radio: RadioButton = findViewById(radiogroup.checkedRadioButtonId)
 
             //how to capture the names
@@ -50,8 +53,8 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-
-            Toast.makeText(applicationContext, "You selected  ${radio.text}  Your Names $names", Toast.LENGTH_LONG).show()
+            //************
+            Toast.makeText(applicationContext, "You selected  ${radio.text}  Your Names $names  County $county", Toast.LENGTH_LONG).show()
 
         }//ends button listener
 
