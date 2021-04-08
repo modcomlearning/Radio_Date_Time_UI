@@ -32,8 +32,13 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+            //time picker
+            time.setOnTimeChangedListener{view, hour, minute->
+                Toast.makeText(applicationContext, "You selected  Time $hour : $minute", Toast.LENGTH_LONG).show()
+            }
 
 
+            
             Toast.makeText(applicationContext, "You selected  ${radio.text}  Your Names $names", Toast.LENGTH_LONG).show()
 
         }//ends button listener
